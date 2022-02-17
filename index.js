@@ -95,3 +95,7 @@ function phoneSpeakToText() {
 
     document.querySelector('#resultado2').value = convertedText;
 }
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(document.querySelector('#resultado').value);
+}
