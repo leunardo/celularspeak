@@ -99,3 +99,7 @@ function phoneSpeakToText() {
 function copyToClipboard() {
     navigator.clipboard.writeText(document.querySelector('#resultado').value);
 }
+
+function clearInput(field) {
+    document.querySelector('#' + field).value = '';
+}

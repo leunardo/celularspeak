@@ -21,7 +21,8 @@
             <textarea type="text" name="resultado" id="resultado" class="form-control"></textarea>
         </div>
         <button class="btn btn-primary mb-2" onclick="textToPhoneSpeak()">Converter</button>
-        <button class="btn btn-primary" onclick="copyToClipboard()">Copiar</button>
+        <button class="btn btn-primary mb-2" onclick="copyToClipboard()">Copiar</button>
+        <button class="btn btn-secondary" onclick="clearInput('texto')">Limpar</button>
     </div>
 
     <div class="card p-3">
@@ -35,10 +36,14 @@
             <label for="resultado2" class="form-label">Resultado</label>
             <textarea type="text" name="resultado2" id="resultado2" class="form-control"></textarea>
         </div>
-        <button class="btn btn-primary" onclick="phoneSpeakToText()">Converter</button>
-    </div>
-    
+        <button class="btn btn-primary mb-2" onclick="phoneSpeakToText()">Converter</button>
+        <button class="btn btn-secondary" onclick="clearInput('celularspeak')">Limpar</button>
 
+    </div>
+
+    <footer>
+        <a class="mt-3 float-end" href="https://www.github.com/leunardo/celularspeak">Código fonte</a>
+    </footer>
 
     <script src="index.js"></script>
 </body>
