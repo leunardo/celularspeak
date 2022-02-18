@@ -84,9 +84,8 @@ function textToPhoneSpeak() {
 function phoneSpeakToText() {
     const charGroups = document.querySelector('#celularspeak')
         .value
-        .match(/\d+\.*/g)[0]
-        .replace(' ', '.0.')
-        .split('.');
+        .match(/\d+\.*/g)
+        .map(item => item.replace('.', ''));
 
     let convertedText = '';
 
