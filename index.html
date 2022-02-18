@@ -28,13 +28,13 @@
     <div class="card p-3">
         <h2>CelularSpeak => Texto</h2>
         <div class="mb-3">
-            <label for="celularspeak" class="form-label">CelularSpeak</label>
-            <textarea type="text" name="celularspeak" id="celularspeak" class="form-control"></textarea>
+            <label for="celularspeak" class="form-label" onclick="pasteClipboard()">CelularSpeak (clique aqui para colar)</label>
+            <textarea type="text" name="celularspeak" id="celularspeak" class="form-control" ></textarea>
         </div>
     
         <div class="mb-3">
             <label for="resultado2" class="form-label">Resultado</label>
-            <textarea type="text" name="resultado2" id="resultado2" class="form-control"></textarea>
+            <textarea type="text" name="resultado2" id="resultado2" class="form-control" style="height: 200px"></textarea>
         </div>
         <button class="btn btn-primary mb-2" onclick="phoneSpeakToText()">Converter</button>
         <button class="btn btn-secondary" onclick="clearInput('celularspeak')">Limpar</button>

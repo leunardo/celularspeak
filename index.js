@@ -82,7 +82,12 @@ function textToPhoneSpeak() {
 }
 
 function phoneSpeakToText() {
-    const charGroups = document.querySelector('#celularspeak').value.split('.');
+    const charGroups = document.querySelector('#celularspeak')
+        .value
+        .match(/\d+.+/g)[0]
+        .replace(' ', '.0.')
+        .split('.');
+
     let convertedText = '';
 
     for (let group of charGroups) {
@@ -102,4 +107,11 @@ function copyToClipboard() {
 
 function clearInput(field) {
     document.querySelector('#' + field).value = '';
+}
+
+function pasteClipboard() {
+    navigator.clipboard.readText().then(text => {
+        document.querySelector('#celularspeak').value = text;
+        phoneSpeakToText();
+    })
 }
