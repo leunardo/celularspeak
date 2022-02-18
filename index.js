@@ -1,5 +1,5 @@
 const mappingKeys = {
-    'a': '2',
+    'a': '2', 
     'b': '22',
     'c': '222',
     'd': '3',
@@ -57,9 +57,15 @@ const mappingKeys = {
     '___': '.'
 }
 
-function textToPhoneSpeak() {
-    const text = document.querySelector('#texto')
-        .value
+function convertTextToPhoneSpeak() {
+    const text = document.querySelector('#texto').value;
+    const converted = textToPhoneSpeak(text);
+
+    document.querySelector('#resultado').value = converted;
+}
+
+function textToPhoneSpeak(text) {
+    text = text
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase();
@@ -78,14 +84,20 @@ function textToPhoneSpeak() {
 
     phonedSpeak = phonedSpeak.substring(0, phonedSpeak.length - 1)
 
-    document.querySelector('#resultado').value = phonedSpeak;
+    return phonedSpeak;
 }
 
-function phoneSpeakToText() {
-    const charGroups = document.querySelector('#celularspeak')
-        .value
-        .match(/\d+\.*/g)
-        .map(item => item.replace('.', ''));
+function convertPhoneSpeakToText() {
+    const text = document.querySelector('#celularspeak').value;
+    const converted = phoneSpeakToText(text);
+
+    document.querySelector('#resultado2').value = converted;
+}
+
+function phoneSpeakToText(text) {
+    const charGroups = text
+        .match(/\S+\.+(\d+|\S+)/g)[0]
+        .split('.');
 
     let convertedText = '';
 
@@ -97,7 +109,7 @@ function phoneSpeakToText() {
         }
     }
 
-    document.querySelector('#resultado2').value = convertedText;
+    return convertedText;
 }
 
 function copyToClipboard() {
@@ -111,6 +123,11 @@ function clearInput(field) {
 function pasteClipboard() {
     navigator.clipboard.readText().then(text => {
         document.querySelector('#celularspeak').value = text;
-        phoneSpeakToText();
+        convertPhoneSpeakToText();
     })
+}
+
+module.exports = {
+    textToPhoneSpeak,
+    phoneSpeakToText
 }
