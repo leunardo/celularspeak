@@ -2,6 +2,8 @@ const CHAR_CODE_A = 'a'.charCodeAt(0)
 const CHAR_CODE_Z = 'z'.charCodeAt(0)
 const CHAR_CODE_R = 'r'.charCodeAt(0)
 const CHAR_CODE_S = 's'.charCodeAt(0)
+const CHAR_CODE_0 = '0'.charCodeAt(0)
+const CHAR_CODE_9 = '9'.charCodeAt(0)
 
 
 function textToPhoneSpeak(text) {
@@ -37,6 +39,11 @@ function getNumber(char) {
         return '9999'
     }
 
+    if (charCode >= CHAR_CODE_0 && charCode <= CHAR_CODE_9) {
+        // char is a number, wrap between identifier
+        return `;${char};`
+    }
+
     if (charCode < CHAR_CODE_A || charCode > CHAR_CODE_Z) {
         // char is not between a-z, so return itself
         return char
@@ -69,6 +76,11 @@ function phoneSpeakToText(text) {
 function getChar(number) {
     if (number === '___') {
         return '.'
+    }
+
+    if (/;\d+;/g.test(number)) {
+        // remove first and last char
+        return number.slice(1).slice(0, -1)
     }
 
     if (isNaN(number)) {
