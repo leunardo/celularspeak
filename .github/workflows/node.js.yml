@@ -6,6 +6,9 @@ name: Unit tests
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**.js'
+
   pull_request:
     branches: [ main ]
 

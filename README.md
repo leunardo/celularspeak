@@ -1,6 +1,7 @@
 # celularspeak
 
 [![Unit tests](https://github.com/leunardo/celularspeak/actions/workflows/node.js.yml/badge.svg)](https://github.com/leunardo/celularspeak/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/leunardo/celularspeak/branch/main/graph/badge.svg?token=SXDG4D30QR)](https://codecov.io/gh/leunardo/celularspeak)
 
 Convert text into numpad of old cellphones.
 
