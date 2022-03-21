@@ -1,16 +1,15 @@
 {
   "name": "celularspeak",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert text into numpad of old cellphones",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
-  "dependencies": {
-    "jest": "^27.5.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0"
+    "@faker-js/faker": "^6.0.0",
+    "jest": "^27.5.1"
   },
   "scripts": {
     "test": "jest",
@@ -20,8 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/leunardo/celularspeak.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cellphone", "phone", "numeric", "translator"],
+  "author": {
+    "name": "Leonardo Alves",
+    "email": "leunardosevla@gmail.com",
+    "url": "https://leonardoalves.dev"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leunardo/celularspeak/issues"
