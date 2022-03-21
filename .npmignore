@@ -2,3 +2,5 @@ CNAME
 index.html
 .github/
 website-functions.js
+coverage/
+tests/
